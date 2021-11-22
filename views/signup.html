@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SignUP</title>
+</head>
+<body>
+<div class="input">
+    <p>{{.err}}</p>
+    <form action="/signup" method="post">
+        <p>ユーザー名 :<input type="text" name="username" placeholder=""/></p>
+        <p>パスワード :<input type="text" name="password" placeholder=""/></p>
+        <p><input type="submit" value="登録" /></p>
+    </form>
+</div>
+</body>
+</html>

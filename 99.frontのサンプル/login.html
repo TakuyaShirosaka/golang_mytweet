@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="input">
+        <p>ユーザー名 :<input type="text" id="username" placeholder="" value="TANAKA" /></p>
+        <p>パスワード :<input type="text" id="password" placeholder="" value="114514" /></p>
+        <p><input type="submit" value="ログイン" onclick="post()" /></p>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function post() {
+        var data = JSON.stringify({
+            "username": document.getElementById("username").value,
+            "password": document.getElementById("password").value,
+        });
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = true;
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === 4) {
+                console.log(this.responseText);
+            }
+        });
+
+        xhr.open("POST", "http://localhost:8080/api/login");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(data);
+    }
+
+</script>

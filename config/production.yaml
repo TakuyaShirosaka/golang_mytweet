@@ -1,0 +1,11 @@
+user:
+  name: "production"
+  db:
+    DBMS: "mysql"
+    USER: "dev"
+    PASS: "dev"
+    DBNAME: "mytweet_database"
+  aws:
+    AccessKeyID: "dummy"
+    SecretKey: "dummy"
+    EndpointURL: ""

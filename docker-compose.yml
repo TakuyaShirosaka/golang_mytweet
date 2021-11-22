@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  mytweet_db:
+    image: mysql:8.0
+    container_name: mytweet_mysql
+    environment:
+      MYSQL_DATABASE: mytweet_database
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev
+      MYSQL_ROOT_PASSWORD: root
+      TZ: 'Asia/Tokyo'
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/mysql/data:/var/lib/mysql
+      - ./docker/work:/work
+    privileged: true
+    tty: true
